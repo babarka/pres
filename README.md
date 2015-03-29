@@ -8,9 +8,9 @@ This analysis is provided as simple process to demonstrate data flow within Clou
 
 # Data Ingest  
 
-To make the example replicable, the data will be pulled from a collection of presidential speeches provided by the Miller Center; http://millercenter.org/president/speeches. To load data:
+ To make the example replicable, the data will be pulled from a collection of presidential speeches provided by the [Miller Center](http://millercenter.org/president/speeches). To load data
 
-   ./00runPresBuild.sh
+    ./00runPresBuild.sh
 
 # Batch Processing
 
