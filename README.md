@@ -9,14 +9,16 @@ This analysis is provided as simple process to demonstrate data flow within Clou
 # Data Ingest  
 
 To make the example replicable, the data will be pulled from a collection of presidential speeches provided by the Miller Center; http://millercenter.org/president/speeches. To load data:
- ./00runPresBuild.sh
+
+   ./00runPresBuild.sh
 
 # Batch Processing
 
-There is unique data by document; document id, presidents name, and year (id,pres,year). We will also exract counts of the words {we,us} as we and {me, i} as me. To run map reduce and load hive metadata:
- ./01runMapRed.sh
- ./hive -f createTableTrans.hql
- 
+ There is unique data by document; document id, presidents name, and year (id,pres,year). We will also exract counts of the words {we,us} as we and {me, i} as me. To run map reduce and load hive metadata:
+
+    ./01runMapRed.sh
+    ./hive -f createTableTrans.hql
+
 # Analytic SQL
 
 There really isn't code to run here, users are expected to discover including use of HUE. Remember to invalidate metadata.
