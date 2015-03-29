@@ -23,5 +23,9 @@ This analysis is provided as simple process to demonstrate data flow within Clou
 
 There really isn't code to run here, users are expected to discover including use of HUE. Remember to invalidate metadata.
 
+# 3rd Party Application
 
 
+ To demonstrate the data is readily available for 3rd party applications / external use, run an R script which will show the correlation of year and we/(we+me):
+
+    ./02impAnalysis.R
