@@ -12,7 +12,8 @@ lm <- lm (team_index ~ dte, data=dat)
 summary(lm)
 
 # lets plot the model so that we can share our analytics
-plot(dat$dte, dat$team_index)
-abline(lm, col='blue')
-
+plot(dat$yr, dat$weme_index,
+     main="Presidential Democratization:\n Inaugural Speech Year by WEME-Index",
+     pch=19, xlab="Inaugural Speech Year", ylab="WEME-Index")
+abline(lm, col='blue')`
 
