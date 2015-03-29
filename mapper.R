@@ -11,6 +11,11 @@ while(length(line <- readLines(input, n=1, warn=FALSE)) > 0) {
    if (grepl('http://millercenter.org/president/speeches/speech-', line)) {
       id <- substr(line, 111, 114)
    }
+
+   # Find Inaugural Address Year
+   if (grepl('amprestitle', line)) {
+     yr <- regmatches(line,regexpr("[0-9]{4}",line))[1]
+   }
    
    # find president
    if (grepl('<h2 style="margin: 0; padding: 0;">', line)) {
@@ -26,7 +31,7 @@ while(length(line <- readLines(input, n=1, warn=FALSE)) > 0) {
       me    <- length(grep("^me$|^i$",words))
       we    <- length(grep("^we$|^us$",words))
       tot   <- length(words)
-      cat(paste(id,pres,me,we,tot,sep='\t'))
+      cat(paste(id,yr,pres,me,we,tot,sep='\t'))
       cat('\n')
    }
    # find transcript end
