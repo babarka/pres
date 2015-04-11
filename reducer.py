@@ -3,37 +3,25 @@
 from operator import itemgetter
 import sys
 
-current_word = None
-current_count = 0
-word = None
+current_id = 'init'
+me_cnt     = 0
+we_cnt     = 0
+tot_cnt    = 0
 
 # input comes from STDIN
 for line in sys.stdin:
-    # remove leading and trailing whitespace
-    line = line.strip()
-
     # parse the input we got from mapper.py
-    word, count = line.split('\t', 1)
-
-    # convert count (currently a string) to int
-    try:
-        count = int(count)
-    except ValueError:
-        # count was not a number, so silently
-        # ignore/discard this line
-        continue
-
-    # this IF-switch only works because Hadoop sorts map output
-    # by key (here: word) before it is passed to the reducer
-    if current_word == word:
-        current_count += count
+    id,yr,pres,me,we,tot = line[:-1].split('\t')
+    if current_id == id:
+        me_cnt  += int(me)
+        we_cnt  += int(we)
+        tot_cnt += int(tot)
     else:
-        if current_word:
-            # write result to STDOUT
-            print '%s\t%s' % (current_word, current_count)
-        current_count = count
-        current_word = word
-
-# do not forget to output the last word if needed!
-if current_word == word:
-    print '%s\t%s' % (current_word, current_count)
+        print '%s\t%s\t%s\t%s\t%s\t%s' % (id,pres,yr,me_cnt,we_cnt,tot_cnt)
+        me_cnt     = int(me)
+        we_cnt     = int(we)
+        tot_cnt    = int(tot)
+        current_id = id
+# do not forget to output the last id if needed
+if current_id == id:
+    print '%s\t%s\t%s\t%s\t%s\t%s' % (id,pres,yr,me_cnt,we_cnt,tot_cnt)

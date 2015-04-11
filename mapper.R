@@ -22,20 +22,22 @@ while(length(line <- readLines(input, n=1, warn=FALSE)) > 0) {
        pres <- gsub('<h2 style="margin: 0; padding: 0;">','',line)
        pres <- gsub('</h2>','',pres)
    }     
-   # find transcript start
-   if (grepl('<div id="transcript" class="indent">', line)) inTranscript <- TRUE   
+   # find transcript end
+   if (grepl('</div>', line)) inTranscript <- FALSE
    # write word counts if in transcript
    if (inTranscript) {
       line  <- tolower(gsub("[.,?!;]"," ",line))
       words <- unlist(strsplit(line, " "))
-      me    <- length(grep("^me$|^i$",words))
-      we    <- length(grep("^we$|^us$",words))
+      me    <- length(grep("^(i|me)$",words))
+      # me    <- length(grep("^(i|me|my|mine|myself)$",words))
+      we    <- length(grep("^(we|us)$",words))
+      # we    <- length(grep("^(we|us|our|ours|ourselves)$",words))
       tot   <- length(words)
       cat(paste(id,yr,pres,me,we,tot,sep='\t'))
       cat('\n')
    }
-   # find transcript end
-   if (grepl('</div>', line)) inTranscript <- FALSE
+   # find transcript start
+   if (grepl('<div id="transcript" class="indent">', line)) inTranscript <- TRUE   
 }
 
 close(input)
