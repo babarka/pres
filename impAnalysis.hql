@@ -1,6 +1,4 @@
--- (c) 2015 copyright brad barker - sample code not supported
--- all rights reserved may not be copied or published without permission
-
+-- brad barker - 4/21/2015
 
 INVALIDATE METADATA default.transd;
 

@@ -16,12 +16,12 @@ for line in sys.stdin:
     # write word counts if in transcript
     if inTranscript:
        line  = re.sub("[.,?!]"," ",line.strip().lower())
-       words = line.split()
+       words = line.split(" ")
        me    = len(filter(lambda x:x in ['i','me'], words))
        #me    = len(filter(lambda x:x in ['i','me','my','mine','myself'], words))
        we    = len(filter(lambda x:x in ['we','us'], words))
        #we    = len(filter(lambda x:x in ['we','us','our','ours','ourselves'], words))
-       tot   = len(words)
+       tot   = len(filter(None,words))
        print '%s\t%s\t%s\t%s\t%s\t%s' % (id,yr,pres,me,we,tot)
     # find transcript start
-    if '<div id="transcript" class="indent">' in line: inTranscript = True   
+    if '<div id="transcript" class="indent">' in line: inTranscript = True 

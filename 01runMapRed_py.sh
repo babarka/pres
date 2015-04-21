@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-# (c) copyright 2015 brad barker - sample code not supported
-# all rights reserved may not be copied or published without permission
+# brad barker - 4/21/2015 
 
 hdfs dfs -rmr /user/cloudera/trans
 

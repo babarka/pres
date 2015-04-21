@@ -1,3 +1,4 @@
+# brad barker - 4/21/2015
 # install.packages("RJDBC",dep=TRUE)
 library(RJDBC)
 drv <- JDBC("org.apache.hive.jdbc.HiveDriver", 

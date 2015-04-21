@@ -1,6 +1,5 @@
 #!/usr/bin/Rscript
-# (c) 2015 copyright brad barker - sample code not supported
-# all rights reserved may not be copied or published without permission
+# brad barker - 4/21/2015 
 
 input <- file("stdin", "r")
 
@@ -32,13 +31,11 @@ while(length(line <- readLines(input, n=1, warn=FALSE)) > 0) {
       # me    <- length(grep("^(i|me|my|mine|myself)$",words))
       we    <- length(grep("^(we|us)$",words))
       # we    <- length(grep("^(we|us|our|ours|ourselves)$",words))
-      tot   <- length(words)
+      tot   <- length(words[words!=""])
       cat(paste(id,yr,pres,me,we,tot,sep='\t'))
       cat('\n')
    }
    # find transcript start
    if (grepl('<div id="transcript" class="indent">', line)) inTranscript <- TRUE   
 }
-
-close(input)
 
