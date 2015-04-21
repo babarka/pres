@@ -26,3 +26,5 @@ There really isn't code to run here, users are expected to discover including us
  To demonstrate the data is readily available for 3rd party applications / external use, run an R script which will show the correlation of year and we/(we+me):
 
     ./02impAnalysis.R
+
+![Alt text](http://github.mtv.cloudera.com/barker/pres/raw/master/snapshot_R.png "Optional title")
