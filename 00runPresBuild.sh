@@ -5,7 +5,6 @@
 # delete everything prior to running
 rm -f speeches pages.txt addresses.txt bigdat.gz
 rm -rf ./dat 
-hdfs dfs -rmr /user/cloudera/pres
 
 # get web pages source
 wget http://millercenter.org/president/speeches

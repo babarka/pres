@@ -1,10 +1,7 @@
-Submitted as potential [blog](https://docs.google.com/a/cloudera.com/document/d/1RYA0PVeJulhkR9P68nk8gvcWZue4155TChJehFh5AE4/edit?usp=sharing) entry. 
-
-
 
 # Presidential Inaugural Speeches
 
-This analysis is provided as simple process to demonstrate data flow within Cloudera`s Enterprise Hub (EDH). The analysis is to determine if presidential inaugural speeches have become more "democratized" by evaluating the occurance of we/us vs me/I in presidential inaugural speeches over time.
+This analysis is provided as simple process to demonstrate methods for handeling data within Cloudera`s Enterprise Hub (EDH). The analysis is to determine if presidential inaugural speeches have become more "democratized" by evaluating the occurance of first person to first and second person in presidential inaugural speeches over time.
 
 # Data Ingest  
 
