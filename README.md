@@ -31,12 +31,12 @@ Using Impala through the Hadoop User Experience (HUE) application, we can quickl
 
  While you will likely not want to pull all data from hadoop locally, sometimes you can bring back summary results using hive or impala and further analyze locally. Here is an R script to analyze how much of a trend there really is:
 
-    02impAnalysis.R
+    02impAnalysisJDBC.R
 
 ![R Analysis](http://github.mtv.cloudera.com/barker/pres/raw/master/snapshot_R.png "R Analysis with Plot")
 
  Alternately, in python:
 
-    02impAnalysis.py
+    02impAnalysisJDBC.py
 
 ![Python Analysis](http://github.mtv.cloudera.com/barker/pres/raw/master/snapshot_py.png "Python Analysis with Plot")
