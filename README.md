@@ -11,9 +11,14 @@ This analysis is provided as simple process to demonstrate methods for handeling
 
 # Batch Processing
 
- There is unique data by document; document id, presidents name, and year (id,pres,year). We will also exract counts of the words {we,us} as we and {me, i} as me. To run map reduce and load hive metadata:
+ There is unique data by document; document id, presidents name, and year (id,pres,year). We will also exract counts of the words {we,us} as we and {me, i} as me. To run R map reduce streaming and load hive metadata:
 
-    ./01runMapRed.sh
+    ./01runMapRed_R.sh
+    ./hive -f createTableTrans.hql
+
+   Alternately, using Python map reduce streaming::
+
+    ./01runMapRed_py.sh
     ./hive -f createTableTrans.hql
 
 # Analytic SQL
@@ -26,3 +31,5 @@ There really isn't code to run here, users are expected to discover including us
  To demonstrate the data is readily available for 3rd party applications / external use, run an R script which will show the correlation of year and we/(we+me):
 
     ./02impAnalysis.R
+
+![Alt text](http://github.mtv.cloudera.com/barker/pres/raw/master/snapshot_R.png "Optional title")
