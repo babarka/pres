@@ -23,7 +23,8 @@ This analysis is provided as simple process to demonstrate methods for handeling
 
 # Analytic SQL
 
-There really isn't code to run here, users are expected to discover including use of HUE. Remember to invalidate metadata.
+Using Impala through the Hadoop User Experience (HUE) application, we can quickly interact through interesting queries. Using impala, these queries can run fast enough that the user can run queries as ad-hoc and await results. We can see using the HUE simple graph functionality that there might be a trend:
+![HUE](http://github.mtv.cloudera.com/barker/pres/raw/master/snapshot_hue.png "Quick Analysis in HUE")
 
 # 3rd Party Application
 
