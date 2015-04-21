@@ -26,11 +26,11 @@ This analysis is provided as simple process to demonstrate methods for handeling
 Using Impala through the Hadoop User Experience (HUE) application, we can quickly interact through interesting queries. Using impala, these queries can run fast enough that the user can run queries as ad-hoc and await results. We can see using the HUE simple graph functionality that there might be a trend:
 ![HUE](http://github.mtv.cloudera.com/barker/pres/raw/master/snapshot_hue.png "Quick Analysis in HUE")
 
-# 3rd Party Application
+# 3rd Party Applications
 
 
- To demonstrate the data is readily available for 3rd party applications / external use, run an R script which will show the correlation of year and we/(we+me):
+ While you will likely not want to pull all data from hadoop locally, sometimes you can bring back summary results useing hive or impala and further analyze locally. Here is an R script to analyze how much of a trend there really is:
 
-    ./02impAnalysis.R
+    02impAnalysis.R
 
-![Alt text](http://github.mtv.cloudera.com/barker/pres/raw/master/snapshot_R.png "Optional title")
+![R Analysis](http://github.mtv.cloudera.com/barker/pres/raw/master/snapshot_R.png "R Analysis with Plot")
