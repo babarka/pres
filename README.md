@@ -24,7 +24,7 @@ This analysis is provided as simple process to demonstrate methods for handeling
 # Analytic SQL
 
 Using Impala through the Hadoop User Experience (HUE) application, we can quickly interact through interesting queries. Using impala, these queries can run fast enough that the user can run queries as ad-hoc and await results. We can see using the HUE simple graph functionality that there might be a trend:
-![HUE](http://github.mtv.cloudera.com/barker/pres/raw/master/snapshot_HUE.png "Quick Analysis in HUE")
+![HUE](https://github.com/babarka/pres/raw/master/snapshot_HUE.png "Quick Analysis in HUE")
 
 # 3rd Party Applications
 
@@ -33,10 +33,10 @@ Using Impala through the Hadoop User Experience (HUE) application, we can quickl
 
     02impAnalysisJDBC.R
 
-![R Analysis](http://github.mtv.cloudera.com/barker/pres/raw/master/snapshot_R.png "R Analysis with Plot")
+![R Analysis](https://github.com/babarka/pres/raw/master/snapshot_R.png "R Analysis with Plot")
 
  Alternately, in python:
 
     02impAnalysisJDBC.py
 
-![Python Analysis](http://github.mtv.cloudera.com/barker/pres/raw/master/snapshot_py.png "Python Analysis with Plot")
+![Python Analysis](https://github.com/babarka/pres/raw/master/snapshot_py.png "Python Analysis with Plot")
