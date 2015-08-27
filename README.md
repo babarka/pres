@@ -16,9 +16,14 @@ This analysis is provided as simple process to demonstrate methods for handeling
     ./01runMapRed_R.sh
     ./hive -f createTableTrans.hql
 
-   Alternately, using Python map reduce streaming::
+   Alternately, using Python map reduce streaming:
 
     ./01runMapRed_py.sh
+    ./hive -f createTableTrans.hql
+
+   Alternately, using pySpark:
+
+    ./01runPySpark.sh
     ./hive -f createTableTrans.hql
 
 # Analytic SQL
