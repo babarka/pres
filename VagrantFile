@@ -1,0 +1,38 @@
+Vagrant.configure(2) do |config|
+  config.vm.box = "quickstart/cdh"  
+  config.vm.box_version = "5.4.2"
+
+  config.vm.synced_folder "./", "/home/cloudera/pres", create: true, group: "cloudera", owner: "cloudera"
+
+  # Provider-specific configuration so you can fine-tune various
+  # backing providers for Vagrant. These expose provider-specific options.
+  # Example for VirtualBox:
+  #
+  config.vm.provider "virtualbox" do |vb|
+    vb.gui = false
+    vb.cpus = "2"
+    vb.memory = "8192"
+  end
+ 
+  config.vm.provision "shell", run: "always", inline: <<-SHELL
+    sudo service cloudera-scm-agent start
+    echo 'Initializing CDH Components...'
+    #/home/cloudera/pres/init/cm_service.py hdfs start
+    #/home/cloudera/pres/init/cm_service.py yarn start
+    #/home/cloudera/pres/init/cm_service.py zookeeper start
+    #/home/cloudera/pres/init/cm_service.py spark_on_yarn start
+    #/home/cloudera/pres/init/cm_service.py hive start
+    #/home/cloudera/pres/init/cm_service.py impala start
+    #/home/cloudera/pres/init/cm_service.py hue start
+
+    # add link to allow sqlCtx
+    #ln -s /etc/hive/conf.cloudera.hive/hive-site.xml /etc/spark/conf.cloudera.spark_on_yarn
+
+    # Starting ipython notebook
+    sed -i '/.*c\.NotebookApp\.notebook_dir.*/c c\.NotebookApp\.notebook_dir = u\"\/home\/cloudera\/pres\/nb\"' /home/cloudera/.ipython/profile_pyspark/ipython_notebook_config.py
+    runuser -l cloudera -c 'nohup /opt/anaconda/bin/ipython notebook --profile=pyspark &> /dev/null &'
+    echo 'Provision Complete! Navigate to localhost:8890 to run analysis.'
+
+  SHELL
+
+end
